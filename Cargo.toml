@@ -5,8 +5,20 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-bevy = { version = "0.18" }
-rand = "0.9"
+bevy = { version = "0.18.0", default-features = false, features = [
+    # 2d
+    "2d",
+    "default_app",
+    "picking",
+    "scene",
+    # ui
+    "ui_api",
+    "ui_bevy_render",
+
+    # default_platform
+    "default_platform",
+] }
+rand = "0.10.0"
 # Compile out low-severity logs to improve performance.
 # Remove these features if you want to profile your game with tracy.
 # (see <https://github.com/bevyengine/bevy/blob/main/docs/profiling.md#tracy-profiler>)
@@ -15,9 +27,12 @@ tracing = { version = "0.1", features = [
     "release_max_level_warn",
 ] }
 lava_ui_builder = {path="./lava_ui_builder"}
+bevy_seedling = "0.7.0"
+bevy_enhanced_input = "0.23.2"
+avian2d = "0.5"
 
 [target.wasm32-unknown-unknown.dependencies]
-getrandom = { version = "0.3", features = ["wasm_js"] }
+getrandom = { version = "0.4.1", features = ["wasm_js"] }
 
 [features]
 # Default to a native dev build.

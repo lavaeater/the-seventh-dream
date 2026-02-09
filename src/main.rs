@@ -13,6 +13,7 @@ mod screens;
 mod theme;
 
 use bevy::{asset::AssetMetaCheck, prelude::*};
+use bevy_seedling::SeedlingPlugin;
 
 fn main() -> AppExit {
     App::new().add_plugins(AppPlugin).run()
@@ -23,7 +24,11 @@ pub struct AppPlugin;
 impl Plugin for AppPlugin {
     fn build(&self, app: &mut App) {
         // Add Bevy plugins.
-        app.add_plugins(
+        app
+            .add_plugins(
+                SeedlingPlugin::default()
+            )
+            .add_plugins(
             DefaultPlugins
                 .set(AssetPlugin {
                     // Wasm builds will check for meta files (that don't exist) if this isn't set.
@@ -46,7 +51,7 @@ impl Plugin for AppPlugin {
         // Add other plugins.
         app.add_plugins((
             asset_tracking::plugin,
-            audio::plugin,
+            // audio::plugin,
             demo::plugin,
             #[cfg(feature = "dev")]
             dev_tools::plugin,
