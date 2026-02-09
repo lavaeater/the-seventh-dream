@@ -116,7 +116,6 @@ allow_warnings = true
 background = false
 on_change_strategy = "kill_then_restart"
 
-
 # This parameterized job runs the example of your choice, as soon
 # as the code compiles.
 # Call it as
@@ -133,6 +132,5 @@ allow_warnings = true
 [keybindings]
 # alt-m = "job:my-job"
 c = "job:clippy-all" # comment this to have 'c' run clippy on only the default target
-l = "job:run-long"
 w = "job:bevy-web"
 b = "job:bevy-run"
