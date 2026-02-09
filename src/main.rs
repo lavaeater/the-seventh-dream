@@ -25,9 +25,7 @@ impl Plugin for AppPlugin {
     fn build(&self, app: &mut App) {
         // Add Bevy plugins.
         app
-            .add_plugins(
-                SeedlingPlugin::default()
-            )
+            
             .add_plugins(
             DefaultPlugins
                 .set(AssetPlugin {
@@ -46,6 +44,8 @@ impl Plugin for AppPlugin {
                     .into(),
                     ..default()
                 }),
+        ).add_plugins(
+            SeedlingPlugin::default()
         );
 
         // Add other plugins.
