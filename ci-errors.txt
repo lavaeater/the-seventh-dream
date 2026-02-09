@@ -1,0 +1,15 @@
+run cargo doc --locked --workspace --profile ci --all-features --document-private-items --no-deps
+  cargo doc --locked --workspace --profile ci --all-features --document-private-items --no-deps
+  shell: /usr/bin/bash -e {0}
+  env:
+    RUSTFLAGS: -Dwarnings -Zshare-generics=y -Zthreads=0
+    RUSTDOCFLAGS: -Dwarnings -Zshare-generics=y -Zthreads=0
+    toolchain: nightly-2026-01-22
+    CARGO_HOME: /home/runner/.cargo
+    CARGO_INCREMENTAL: 0
+    CARGO_TERM_COLOR: always
+    CACHE_ON_FAILURE: false
+    Updating crates.io index
+error: cannot update the lock file /home/runner/work/the-seventh-dream/the-seventh-dream/Cargo.lock because --locked was passed to prevent this
+help: to generate the lock file without accessing the network, remove the --locked flag and use --offline instead.
+Error: Process completed with exit code 101.
