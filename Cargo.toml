@@ -26,7 +26,7 @@ tracing = { version = "0.1", features = [
     "max_level_debug",
     "release_max_level_warn",
 ] }
-lava_ui_builder = {path="./lava_ui_builder"}
+lava_ui_builder = { git="https://github.com/lavaeater/lava_ui_builder.git", tag="v0.2.0"}
 bevy_seedling = "0.7.0"
 bevy_enhanced_input = "0.23.2"
 avian2d = "0.5"
